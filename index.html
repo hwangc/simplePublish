@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Simple publish</title>
+  </head>
+  <body>
+    <div class="main">
+      <form
+        class="repo-form"
+        action="/repositories"
+        method="post"
+        accept-charset="UTF-8"
+      >
+        <div class="header">
+          <div class="title">Create a new repository</div>
+          <div class="description">
+            A repository contains all project files, including the revision
+            history. Already have a project repository elsewhere?
+            <a href="#">Import a repository.</a>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="repo-info clearfix">
+          <div class="repo-input">
+            <div class="owner">
+              <div class="title req">owner</div>
+              <div class="user down">
+                <img src="/images/hwangc.png" alt="" />
+                <div class="name">hwangc</div>
+              </div>
+            </div>
+            <div class="slash"><span class="text">/</span></div>
+            <div class="repo-name">
+              <div class="title req">Repository name</div>
+              <input class="name-input ifocus" type="text" />
+            </div>
+            <div class="select-modal">
+              <div class="owner-item">
+                <div class="user">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+                  <img src="/images/hwangc.png" alt="" />
+                  <div class="name">hwangc</div>
+                </div>
+              </div>
+              <div class="owner-item">
+                <div class="user">
+                  <img src="/images/hwangc.png" alt="" />
+                  <div class="name">hwangc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="repo-name-help">
+            Great repository names are short and memorable. Need inspiration?
+            How about turbo-train?
+          </div>
+          <div class="description">
+            <div class="title">Description<span class="opt"> (optional)</span>
+            </div>
+            <input class="disc-input ifocus" type="text" />
+          </div>
+        </div>
+        <hr aria-hidden="true">
+        <div class="privacy">
+          <div class="public type">
+            <input type="radio" name="privacy" id="privacy-public" />
+            <div class="description">
+              <svg
+                height="32"
+                class="octicon octicon-repo float-left mt-1 mr-2"
+                viewBox="0 0 24 24"
+                version="1.1"
+                width="32"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 2.75A2.75 2.75 0 015.75 0h14.5a.75.75 0 01.75.75v20.5a.75.75 0 01-.75.75h-6a.75.75 0 010-1.5h5.25v-4H6A1.5 1.5 0 004.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 01-.6 1.374A3.25 3.25 0 013 18.75v-16zM19.5 1.5V15H6c-.546 0-1.059.146-1.5.401V2.75c0-.69.56-1.25 1.25-1.25H19.5z"
+                ></path>
+                <path
+                  d="M7 18.25a.25.25 0 01.25-.25h5a.25.25 0 01.25.25v5.01a.25.25 0 01-.397.201l-2.206-1.604a.25.25 0 00-.294 0L7.397 23.46a.25.25 0 01-.397-.2v-5.01z"
+                ></path>
+              </svg>
+              <div class="title">Public</div>
+              <div class="description">
+                Anyone on the internet can see this repository. You choose who can
+                commit.
+              </div>
+            </div>
+          </div>
+          <div class="private type">
+            <input type="radio" name="privacy" id="privacy-private" />
+            <div class="description">
+              <svg
+                height="32"
+                class="octicon octicon-lock color-private-icon float-left mt-1 mr-2"
+                viewBox="0 0 24 24"
+                version="1.1"
+                width="32"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 9V7.25C6 3.845 8.503 1 12 1s6 2.845 6 6.25V9h.5a2.5 2.5 0 012.5 2.5v8a2.5 2.5 0 01-2.5 2.5h-13A2.5 2.5 0 013 19.5v-8A2.5 2.5 0 015.5 9H6zm1.5-1.75C7.5 4.58 9.422 2.5 12 2.5c2.578 0 4.5 2.08 4.5 4.75V9h-9V7.25zm-3 4.25a1 1 0 011-1h13a1 1 0 011 1v8a1 1 0 01-1 1h-13a1 1 0 01-1-1v-8z"
+                ></path>
+              </svg>
+              <div class="title">Private</div>
+              <div class="description">
+                You choose who can see and commit to this repository.
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr aria-hidden="true">
+        <div class="init">
+          <div class="top">
+            <div class="title">Initialize this repository with:</div>
+            <div class="description">
+              Skip this step if you’re importing an existing repository.
+            </div>
+          </div>
+          <div class="opt">
+            <div class="readme type">
+              <input type="checkbox" name="add-readme" id="add-readme" />
+              <label for="add-readme">Add a README file</label>
+              <div class="note">
+                This is where you can write a long description for your project.
+                <a href="">Learn more.</a>
+              </div>
+            </div>
+            <div class="gitignore type">
+              <input type="checkbox" name="add-gitignore" id="add-gitignore" />
+              <label for="add-gitignore">Add .gitignore</label>
+              <div class="note">
+                Choose which files not to track from a list of templates. <a href="">Learn more.</a>
+              </div>
+            </div>
+            <div class="license type">
+              <input
+                type="checkbox"
+                name="choose-license"
+                id="choose-license"
+              />
+              <label for="choose-license">Choose a license</label>
+              <div class="note">
+                A license tells others what they can and can't do with your
+                code. <a href="">Learn more.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr aria-hidden="true">
+        <div class="creation">
+          <button type="submit" class="submit-btn" >Create repository</button>
+        </div>
+        <hr aria-hidden="true">
+      </form>
+    </div>
+  </body>
+</html>
